@@ -1,0 +1,128 @@
+This is a fork of https://github.com/pyload/pyload
+with a reworked Qt4 GUI on top of the pyLoad stable branch.
+
+README for pyLoad Client v0.4.9 ; Internal version: 2016-12-23
+https://github.com/snilt/pyload/tree/forkreadme
+
+The actual source code is in the qt4gui branch.
+https://github.com/snilt/pyload/tree/qt4gui
+
+
+Some (new) features:
+====================
+
+- Drag'n'Drop
+- Sorting of packages and links
+- Moving of links to another package (Collector only)
+- Quick access to the server's download speed setting
+- Built-in ClickNLoad port forwarding
+- SSL encryption
+- Desktop notifications
+- Custom Fonts
+- Language Support (only english and german at this time)
+- Captcha solving dialog
+- File hosting service account management (untested)
+- Adding of packages, link and containers
+- Clipboard watcher
+- Command line argument support
+
+
+So far the GUI has been tested only on the following systems:
+=============================================================
+
+Debian Jessie (stable) (KDE)
+  Platform: Linux-3.16.0-4-amd64-x86_64-with-debian-8.6
+  Qt version: 4.8.6
+  Python version: 2.7.9
+  PyQt version: 4.11.2
+  SIP version: 4.16.4
+Ubuntu 12.04 (precise) (Xfce)
+  Platform: Linux-3.2.0-119-generic-i686-athlon-with-Ubuntu-12.04-precise
+  Qt version: 4.8.1
+  Python version: 2.7.3
+  PyQt version: 4.9.1
+  SIP version: 4.13.2
+
+
+Download
+========
+
+From the GitHub website:
+  https://github.com/snilt/pyload/archive/qt4gui.zip
+Or clone the git repository:
+  git clone https://github.com/snilt/pyload.git
+  git checkout -b forkreadme origin/forkreadme
+  git checkout -b qt4gui origin/qt4gui
+
+
+Dependencies in addition to the dependencies of pyLoad (https://pyload.net):
+============================================================================
+
+Python 2.7 (required for PyQt4)
+PyQt4
+Python bindings for libnotify
+  Install on Debian-based Linux systems: apt-get install python-qt4 python-notify
+
+
+Recommendations (especially for non-KDE desktops):
+==================================================
+
+QtCurve
+  Install on Debian-based Linux systems: apt-get install qtcurve
+Qt4 configuration tool
+  (to select the QtCurve widget style if your desktop environment does not provide such option)
+  Install on Debian-based Linux systems: apt-get install qt4-qtconfig
+  Then run qtconfig and choose QtCurve widget style
+
+
+Context-sensitive help
+======================
+
+For some parts of the GUI there is context-sensitive help available
+  indicated by a question mark button in the window's title bar.
+On non-KDE desktops:
+  If there is no question mark button shown in the main window title bar (and elsewhere),
+    you have to trigger the context-sensitive help from the window's system menu,
+    usually by clicking on the icon in the left corner of title bar.
+  If the help text is unreadable try set a different qt widget style (Qt4 configuration tool)
+    or install QtCurve and set QtCurve widget style
+
+
+File changes in the qt4gui branch:
+==================================
+
+pyLoadGui.py (altered)
+icons/add_small.png            (altered)
+icons/pull_small.png           (altered)
+icons/push_small.png           (altered)
+icons/refresh_small.png        (altered)
+icons/toolbar_add.png          (altered)
+icons/toolbar_pause.png        (altered)
+icons/toolbar_refresh.png      (new)
+icons/toolbar_remove.png       (altered)
+icons/toolbar_start.png        (altered)
+icons/toolbar_stop_nopause.png (new)
+icons/toolbar_stop.png         (altered)
+locale/gui.pot (altered)
+locale/cs/LC_MESSAGES/pyLoadGui.mo    (altered)
+locale/de/LC_MESSAGES/pyLoadGui.mo    (altered)
+locale/es/LC_MESSAGES/pyLoadGui.mo    (altered)
+locale/fi/LC_MESSAGES/pyLoadGui.mo    (altered)
+locale/fr/LC_MESSAGES/pyLoadGui.mo    (altered)
+locale/it/LC_MESSAGES/pyLoadGui.mo    (altered)
+locale/nl/LC_MESSAGES/pyLoadGui.mo    (altered)
+locale/pl/LC_MESSAGES/pyLoadGui.mo    (altered)
+locale/pt_BR/LC_MESSAGES/pyLoadGui.mo (altered)
+locale/ro/LC_MESSAGES/pyLoadGui.mo    (altered)
+locale/ru/LC_MESSAGES/pyLoadGui.mo    (altered)
+locale/sr/LC_MESSAGES/pyLoadGui.mo    (altered)
+locale/sv/LC_MESSAGES/pyLoadGui.mo    (altered)
+locale/tr/LC_MESSAGES/pyLoadGui.mo    (altered)
+module/config/gui_default.xml (altered)
+module/gui/*                (altered)
+module/gui/Tools.py         (new)
+module/gui/LoggingLevels.py (new)
+module/remote/thriftbackend/pyload.thrift   (altered)             *** also affects the thrift server ***
+module/remote/thriftbackend/Socket.py       (altered)             *** also affects the thrift server ***
+module/remote/thriftbackend/ThriftClient.py (altered)             *** also affects the cli client    ***
+module/remote/thriftbackend/thriftgen/pyload/ttypes.py (altered)  *** also affects the api           ***
