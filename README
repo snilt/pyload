@@ -93,6 +93,7 @@ File changes in the qt4gui branch:
 ==================================
 
 pyLoadGui.py (altered)
+icons/abort_small.png          (new)
 icons/add_small.png            (altered)
 icons/pull_small.png           (altered)
 icons/push_small.png           (altered)
