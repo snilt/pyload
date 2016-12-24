@@ -1,7 +1,7 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.9 ; Internal version: 2016-12-23
+README for pyLoad Client v0.4.9 ; Internal version: 2016-12-24
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
@@ -25,6 +25,7 @@ Some (new) features:
 - Adding of packages, link and containers
 - Clipboard watcher
 - Command line argument support
+- Internal server (standalone mode)
 
 
 So far the GUI has been tested only on the following systems:
