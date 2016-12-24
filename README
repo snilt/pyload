@@ -49,7 +49,7 @@ Download
 ========
 
 From the GitHub website:
-  https://github.com/snilt/pyload/archive/qt4gui.zip
+  https://github.com/snilt/pyload/releases/latest
 Or clone the git repository:
   git clone https://github.com/snilt/pyload.git
   git checkout -b forkreadme origin/forkreadme
