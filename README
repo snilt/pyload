@@ -1,7 +1,7 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.9 ; Internal version: 2016-12-24
+README for pyLoad Client v0.4.9 ; Internal version: 2017-03-07
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
@@ -50,16 +50,22 @@ Download
 
 From the GitHub website:
   https://github.com/snilt/pyload/releases/latest
-Or clone the git repository:
+Or clone the git repository (linux bash):
   git clone https://github.com/snilt/pyload.git
-  git checkout -b forkreadme origin/forkreadme
+  cd pyload
+  git checkout -b stable origin/stable
   git checkout -b qt4gui origin/qt4gui
+Update an existing clone (linux bash):
+  cd pyload
+  git checkout forkreadme && git pull
+  git checkout stable && git pull
+  git checkout qt4gui && git pull
 
 
 Dependencies in addition to the dependencies of pyLoad (https://pyload.net):
 ============================================================================
 
-Python 2.7 (required for PyQt4)
+Python 2.5-2.7 (required for PyQt4)
 PyQt4
 Python bindings for libnotify
   Install on Debian-based Linux systems: apt-get install python-qt4 python-notify
@@ -103,8 +109,8 @@ icons/toolbar_pause.png        (altered)
 icons/toolbar_refresh.png      (new)
 icons/toolbar_remove.png       (altered)
 icons/toolbar_start.png        (altered)
-icons/toolbar_stop_nopause.png (new)
 icons/toolbar_stop.png         (altered)
+icons/toolbar_stop_nopause.png (new)
 locale/gui.pot (altered)
 locale/cs/LC_MESSAGES/pyLoadGui.mo    (altered)
 locale/de/LC_MESSAGES/pyLoadGui.mo    (altered)
@@ -121,10 +127,23 @@ locale/sr/LC_MESSAGES/pyLoadGui.mo    (altered)
 locale/sv/LC_MESSAGES/pyLoadGui.mo    (altered)
 locale/tr/LC_MESSAGES/pyLoadGui.mo    (altered)
 module/config/gui_default.xml (altered)
-module/gui/*                (altered)
-module/gui/Tools.py         (new)
-module/gui/LoggingLevels.py (new)
-module/remote/thriftbackend/pyload.thrift   (altered)             *** also affects the thrift server ***
-module/remote/thriftbackend/Socket.py       (altered)             *** also affects the thrift server ***
-module/remote/thriftbackend/ThriftClient.py (altered)             *** also affects the cli client    ***
-module/remote/thriftbackend/thriftgen/pyload/ttypes.py (altered)  *** also affects the api           ***
+module/gui/AccountEdit.py       (altered)
+module/gui/Accounts.py          (altered)
+module/gui/CaptchaDialog.py     (new)
+module/gui/Collector.py         (altered)
+module/gui/ConnectionManager.py (altered)
+module/gui/connector.py         (altered)
+module/gui/CoreConfigParser.py  (altered)
+module/gui/LinkDock.py          (altered)
+module/gui/LoggingLevels.py     (new)
+module/gui/MainWindow.py        (altered)
+module/gui/Overview.py          (altered)
+module/gui/PackageDock.py       (altered)
+module/gui/Queue.py             (altered)
+module/gui/SettingsWidget.py    (altered)
+module/gui/Tools.py             (new)
+module/gui/XMLParser.py         (altered)
+module/remote/thriftbackend/pyload.thrift   (altered)             * affects the thrift server *
+module/remote/thriftbackend/Socket.py       (altered)             * affects the thrift server *
+module/remote/thriftbackend/ThriftClient.py (altered)             * affects the cli client    *
+module/remote/thriftbackend/thriftgen/pyload/ttypes.py (altered)  * affects the api           *
