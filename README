@@ -1,7 +1,7 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.9 ; Internal version: 2017-03-07
+README for pyLoad Client v0.4.9 ; Internal version: 2017-03-17
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
@@ -33,16 +33,27 @@ So far the GUI has been tested only on the following systems:
 
 Debian Jessie (stable) (KDE)
   Platform: Linux-3.16.0-4-amd64-x86_64-with-debian-8.6
+  Python version: 2.7.9 (64bit)
   Qt version: 4.8.6
-  Python version: 2.7.9
   PyQt version: 4.11.2
   SIP version: 4.16.4
 Ubuntu 12.04 (precise) (Xfce)
   Platform: Linux-3.2.0-119-generic-i686-athlon-with-Ubuntu-12.04-precise
+  Python version: 2.7.3 (32bit)
   Qt version: 4.8.1
-  Python version: 2.7.3
   PyQt version: 4.9.1
   SIP version: 4.13.2
+
+
+Simple functional tests made on the following systems:
+======================================================
+
+Windows 10 Enterprise   (Installation notes below)
+  Platform: Windows-8-6.2.9200 (64bit)
+  Python version: 2.7.9 (32bit)
+  Qt version: 4.8.6
+  PyQt version: 4.11.2
+  SIP version: 4.16.3
 
 
 Download
@@ -71,8 +82,8 @@ Python bindings for libnotify
   Install on Debian-based Linux systems: apt-get install python-qt4 python-notify
 
 
-Recommendations (especially for non-KDE desktops):
-==================================================
+Recommendations (especially for non-KDE linux desktops):
+========================================================
 
 QtCurve
   Install on Debian-based Linux systems: apt-get install qtcurve
@@ -87,12 +98,28 @@ Context-sensitive help
 
 For some parts of the GUI there is context-sensitive help available
   indicated by a question mark button in the window's title bar.
-On non-KDE desktops:
+On non-KDE linux desktops:
   If there is no question mark button shown in the main window title bar (and elsewhere),
     you have to trigger the context-sensitive help from the window's system menu,
     usually by clicking on the icon in the left corner of title bar.
   If the help text is unreadable try set a different qt widget style (Qt4 configuration tool)
     or install QtCurve and set QtCurve widget style
+
+
+Notes: Installation of dependencies on Windows 10
+=================================================
+
+Download and install Python 32-bit (even if your Windows is 64-bit)
+  https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi
+  Install with default features
+Download and install PyQt4
+  https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.2/PyQt4-4.11.2-gpl-Py2.7-Qt4.8.6-x32.exe
+  Select type of install: Minimal
+Download and install pyOpenSSL
+  https://www.egenix.com/cryptodownload/?file=egenix-pyopenssl-0.13.16.win32-py2.7.msi
+Install Python packages from Windows Command Prompt:
+  C:\Python27\python -m pip install -U pip setuptools
+  C:\Python27\python pip install pycurl pillow pycryptodome
 
 
 File changes in the qt4gui branch:
