@@ -1,7 +1,7 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.9 ; Internal version: 2017-03-17
+README for pyLoad Client v0.4.9 ; Internal version: 2017-03-21
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
@@ -48,12 +48,19 @@ Ubuntu 12.04 (precise) (Xfce)
 Simple functional tests made on the following systems:
 ======================================================
 
-Windows 10 Enterprise   (Installation notes below)
+Windows 10 Enterprise
   Platform: Windows-8-6.2.9200 (64bit)
   Python version: 2.7.9 (32bit)
   Qt version: 4.8.6
   PyQt version: 4.11.2
   SIP version: 4.16.3
+Windows 7 Home Premium
+  Platform: Windows-7-6.1.7601-SP1 (64bit)
+  Python version: 2.7.9 (32bit)
+  Qt version: 4.8.6
+  PyQt version: 4.11.2
+  SIP version: 4.16.3
+(Windows installation notes below)
 
 
 Download
@@ -106,8 +113,8 @@ On non-KDE linux desktops:
     or install QtCurve and set QtCurve widget style
 
 
-Notes: Installation of dependencies on Windows 10
-=================================================
+Notes: Installation of dependencies on Windows
+==============================================
 
 Download and install Python 32-bit (even if your Windows is 64-bit)
   https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi
@@ -119,7 +126,7 @@ Download and install pyOpenSSL
   https://www.egenix.com/cryptodownload/?file=egenix-pyopenssl-0.13.16.win32-py2.7.msi
 Install Python packages from Windows Command Prompt:
   C:\Python27\python -m pip install -U pip setuptools
-  C:\Python27\python pip install pycurl pillow pycryptodome
+  C:\Python27\python -m pip install pycurl pillow pycryptodome
 
 
 File changes in the qt4gui branch:
