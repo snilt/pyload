@@ -1,7 +1,7 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.9 ; Internal version: 2017-03-21
+README for pyLoad Client v0.4.9 ; Internal version: 2017-03-28
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
@@ -28,8 +28,8 @@ Some (new) features:
 - Internal server (standalone mode)
 
 
-So far the GUI has been tested only on the following systems:
-=============================================================
+The GUI has been tested on the following systems:
+=================================================
 
 Debian Jessie (stable) (KDE)
   Platform: Linux-3.16.0-4-amd64-x86_64-with-debian-8.6
@@ -43,24 +43,18 @@ Ubuntu 12.04 (precise) (Xfce)
   Qt version: 4.8.1
   PyQt version: 4.9.1
   SIP version: 4.13.2
-
-
-Simple functional tests made on the following systems:
-======================================================
-
 Windows 10 Enterprise
-  Platform: Windows-8-6.2.9200 (64bit)
-  Python version: 2.7.9 (32bit)
-  Qt version: 4.8.6
-  PyQt version: 4.11.2
-  SIP version: 4.16.3
+  Platform: Windows-10-10.0.14393 (64bit)
+  Python version: 2.7.13 (32bit)
+  Qt version: 4.8.7
+  PyQt version: 4.11.4
+  SIP version: 4.16.8
 Windows 7 Home Premium
   Platform: Windows-7-6.1.7601-SP1 (64bit)
-  Python version: 2.7.9 (32bit)
-  Qt version: 4.8.6
-  PyQt version: 4.11.2
-  SIP version: 4.16.3
-(Windows installation notes below)
+  Python version: 2.7.13 (32bit)
+  Qt version: 4.8.7
+  PyQt version: 4.11.4
+  SIP version: 4.16.8
 
 
 Download
@@ -83,14 +77,45 @@ Update an existing clone (linux bash):
 Dependencies in addition to the dependencies of pyLoad (https://pyload.net):
 ============================================================================
 
-Python 2.5-2.7 (required for PyQt4)
+Python 2.7
 PyQt4
-Python bindings for libnotify
-  Install on Debian-based Linux systems: apt-get install python-qt4 python-notify
+Python bindings for libnotify (Linux only)
 
 
-Recommendations (especially for non-KDE linux desktops):
-========================================================
+Installation of dependencies
+============================
+
+On Debian-based Linux systems:
+  apt-get install python python-crypto python-openssl python-pycurl python-imaging python-beaker
+  apt-get install python-qt4 python-notify tesseract-ocr tesseract-ocr-eng gocr unrar rhino
+
+On Windows OS:
+  Download and install Python 32-bit (even if your Windows is 64-bit)
+    https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi
+    Install with default features
+  Download and install PyQt4
+    https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x32.exe
+    Select type of install: Minimal
+  Download and install pyOpenSSL
+    https://www.egenix.com/cryptodownload/?file=egenix-pyopenssl-0.13.16.win32-py2.7.msi
+  Install Python packages from Windows Command Prompt:
+    C:\Python27\python -m pip install -U pip setuptools
+    C:\Python27\python -m pip install pycurl pillow pycryptodome
+  Download and install Rhino:
+    https://github.com/mozilla/rhino/releases/download/Rhino1_7_7_1_RELEASE/rhino-1.7.7.1.zip
+    Double-click on the downloaded file, navigate into the "lib" folder,
+      right-click on the rhino-1.7.7.1 file and select Copy
+    Open your users folder, create a new folder, name it "pyload",
+      right-click on it, and select Paste
+    Open a Command Prompt:
+      cd pyload
+      ren rhino-1.7.7.1.jar js.jar
+  Download and install Java:
+    https://java.com/en/download/manual.jsp
+
+
+Recommendations (for non-KDE linux desktops):
+=============================================
 
 QtCurve
   Install on Debian-based Linux systems: apt-get install qtcurve
@@ -111,22 +136,6 @@ On non-KDE linux desktops:
     usually by clicking on the icon in the left corner of title bar.
   If the help text is unreadable try set a different qt widget style (Qt4 configuration tool)
     or install QtCurve and set QtCurve widget style
-
-
-Notes: Installation of dependencies on Windows
-==============================================
-
-Download and install Python 32-bit (even if your Windows is 64-bit)
-  https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi
-  Install with default features
-Download and install PyQt4
-  https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.2/PyQt4-4.11.2-gpl-Py2.7-Qt4.8.6-x32.exe
-  Select type of install: Minimal
-Download and install pyOpenSSL
-  https://www.egenix.com/cryptodownload/?file=egenix-pyopenssl-0.13.16.win32-py2.7.msi
-Install Python packages from Windows Command Prompt:
-  C:\Python27\python -m pip install -U pip setuptools
-  C:\Python27\python -m pip install pycurl pillow pycryptodome
 
 
 File changes in the qt4gui branch:
