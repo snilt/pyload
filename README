@@ -1,7 +1,7 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.9 ; Internal version: 2017-03-28
+README for pyLoad Client v0.4.9 ; Internal version: 2017-04-09
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
@@ -26,35 +26,6 @@ Some (new) features:
 - Clipboard watcher
 - Command line argument support
 - Internal server (standalone mode)
-
-
-The GUI has been tested on the following systems:
-=================================================
-
-Debian Jessie (stable) (KDE)
-  Platform: Linux-3.16.0-4-amd64-x86_64-with-debian-8.6
-  Python version: 2.7.9 (64bit)
-  Qt version: 4.8.6
-  PyQt version: 4.11.2
-  SIP version: 4.16.4
-Ubuntu 12.04 (precise) (Xfce)
-  Platform: Linux-3.2.0-119-generic-i686-athlon-with-Ubuntu-12.04-precise
-  Python version: 2.7.3 (32bit)
-  Qt version: 4.8.1
-  PyQt version: 4.9.1
-  SIP version: 4.13.2
-Windows 10 Enterprise
-  Platform: Windows-10-10.0.14393 (64bit)
-  Python version: 2.7.13 (32bit)
-  Qt version: 4.8.7
-  PyQt version: 4.11.4
-  SIP version: 4.16.8
-Windows 7 Home Premium
-  Platform: Windows-7-6.1.7601-SP1 (64bit)
-  Python version: 2.7.13 (32bit)
-  Qt version: 4.8.7
-  PyQt version: 4.11.4
-  SIP version: 4.16.8
 
 
 Download
@@ -85,11 +56,19 @@ Python bindings for libnotify (Linux only)
 Installation of dependencies
 ============================
 
-On Debian-based Linux systems:
+Debian/Ubuntu/Debian-based Linux:
   apt-get install python python-crypto python-openssl python-pycurl python-imaging python-beaker
   apt-get install python-qt4 python-notify tesseract-ocr tesseract-ocr-eng gocr unrar rhino
 
-On Windows OS:
+openSUSE Linux:
+  zypper install python python-pycrypto python-pyOpenSSL python-pycurl python-Pillow python-Beaker
+  zypper install python-qt4 python-notify tesseract-ocr gocr unrar rhino python-gtk
+
+Fedora Linux:
+  dnf install python python2-crypto pyOpenSSL python-pycurl python2-pillow python-beaker
+  dnf install PyQt4 notify-python tesseract gocr unar rhino pygtk2
+
+Windows OS:
   Download and install Python 32-bit (even if your Windows is 64-bit)
     https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi
     Install with default features
@@ -125,17 +104,45 @@ Qt4 configuration tool
   Then run qtconfig and choose QtCurve widget style
 
 
-Context-sensitive help
-======================
+Tested on the following systems:
+================================
 
-For some parts of the GUI there is context-sensitive help available
-  indicated by a question mark button in the window's title bar.
-On non-KDE linux desktops:
-  If there is no question mark button shown in the main window title bar (and elsewhere),
-    you have to trigger the context-sensitive help from the window's system menu,
-    usually by clicking on the icon in the left corner of title bar.
-  If the help text is unreadable try set a different qt widget style (Qt4 configuration tool)
-    or install QtCurve and set QtCurve widget style
+Debian Jessie (stable) (KDE 4.14)
+  Platform: Linux-3.16.0-4-amd64-x86_64-with-debian-8.6
+  Python version: 2.7.9 (64bit)
+  Qt version: 4.8.6
+  PyQt version: 4.11.2
+  SIP version: 4.16.4
+Ubuntu 12.04 (precise) (Xfce 4.8)
+  Platform: Linux-3.2.0-119-generic-i686-athlon-with-Ubuntu-12.04-precise
+  Python version: 2.7.3 (32bit)
+  Qt version: 4.8.1
+  PyQt version: 4.9.1
+  SIP version: 4.13.2
+openSUSE Leap 42.2 (GNOME 3.20)
+  Platform: Linux-4.4.57-18.3-default-x86_64-with-SuSE-42.2-x86_64
+  Python version: 2.7.12 (64bit)
+  Qt version: 4.8.6
+  PyQt version: 4.11.4
+  SIP version: 4.16.9
+Fedora 25 Workstation (GNOME 3.22)
+  Platform: Linux-4.8.6-300.fc25.x86_64-x86_64-with-fedora-25-Twenty_Five
+  Python version: 2.7.13 (64bit)
+  Qt version: 4.8.7
+  PyQt version: 4.11.4
+  SIP version: 4.18.1
+Windows 10 Enterprise
+  Platform: Windows-10-10.0.14393 (64bit)
+  Python version: 2.7.13 (32bit)
+  Qt version: 4.8.7
+  PyQt version: 4.11.4
+  SIP version: 4.16.8
+Windows 7 Home Premium
+  Platform: Windows-7-6.1.7601-SP1 (64bit)
+  Python version: 2.7.13 (32bit)
+  Qt version: 4.8.7
+  PyQt version: 4.11.4
+  SIP version: 4.16.8
 
 
 File changes in the qt4gui branch:
