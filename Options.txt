@@ -1,0 +1,184 @@
+
+Debian Jessie, KDE 4.14
+=======================
+  Options -> Tray Icon
+    [X] Enable Tray Icon
+         [ ] Restore normal window geometry on show
+         [ ] Use alternative method for showing dockable windows
+  Options -> Other
+    [X] Workaround for broken window geometry after unmaximize
+         [ ] Extra fix for show from tray
+         [ ] Apply second last known geometry
+         [ ] Extra fix on application start
+         [ ] Always restore geometry
+
+
+Fedora 25 Workstation, GNOME 3.22
+=================================
+  Options -> Tray Icon
+    [X] Enable Tray Icon
+         [ ] Restore normal window geometry on show
+         [ ] Use alternative method for showing dockable windows
+  Options -> Other
+    [X] Workaround for broken window geometry after unmaximize
+         [X] Extra fix for show from tray
+         [ ] Apply second last known geometry
+         [ ] Extra fix on application start
+         [ ] Always restore geometry
+
+
+Lubuntu 16.04, LXDE
+===================
+  Options -> Tray Icon
+    [X] Enable Tray Icon
+         [X] Restore normal window geometry on show
+         [ ] Use alternative method for showing dockable windows
+  Options -> Other
+    [X] Workaround for broken window geometry after unmaximize
+         [X] Extra fix for show from tray
+         [ ] Apply second last known geometry
+         [ ] Extra fix on application start
+         [X] Always restore geometry
+
+
+Mint 18.1, Cinnamon 3.2.7
+=========================
+  Options -> Tray Icon
+    [X] Enable Tray Icon
+         [ ] Restore normal window geometry on show
+         [ ] Use alternative method for showing dockable windows
+  Options -> Other
+    [X] Workaround for broken window geometry after unmaximize
+         [X] Extra fix for show from tray
+         [ ] Apply second last known geometry
+         [ ] Extra fix on application start
+         [ ] Always restore geometry
+
+
+Mint 18.1, MATE 1.16.1
+======================
+  Options -> Tray Icon
+    [X] Enable Tray Icon
+         [ ] Restore normal window geometry on show
+         [ ] Use alternative method for showing dockable windows
+  Options -> Other
+    [X] Workaround for broken window geometry after unmaximize
+         [X] Extra fix for show from tray
+         [ ] Apply second last known geometry
+         [ ] Extra fix on application start
+         [ ] Always restore geometry
+
+
+Mint 18.1, Xfce 4.12
+====================
+  Options -> Tray Icon
+    [X] Enable Tray Icon
+         [ ] Restore normal window geometry on show
+         [ ] Use alternative method for showing dockable windows
+  Options -> Other
+    [X] Workaround for broken window geometry after unmaximize
+         [ ] Extra fix for show from tray
+         [X] Apply second last known geometry
+         [X] Extra fix on application start
+         [ ] Always restore geometry
+
+
+Mint 18.1, KDE 5.8.5
+====================
+  Options -> Tray Icon
+    [X] Enable Tray Icon
+         [ ] Restore normal window geometry on show
+         [ ] Use alternative method for showing dockable windows
+  Options -> Other
+    [X] Workaround for broken window geometry after unmaximize
+         [ ] Extra fix for show from tray
+         [ ] Apply second last known geometry
+         [ ] Extra fix on application start
+         [ ] Always restore geometry
+
+
+openSUSE Leap 42.2, GNOME 3.20
+==============================
+  Options -> Tray Icon
+    [X] Enable Tray Icon
+         [ ] Restore normal window geometry on show
+         [ ] Use alternative method for showing dockable windows
+  Options -> Other
+    [X] Workaround for broken window geometry after unmaximize
+         [X] Extra fix for show from tray
+         [ ] Apply second last known geometry
+         [ ] Extra fix on application start
+         [ ] Always restore geometry
+
+
+Ubuntu 12.04, Xfce4.8
+=====================
+  Options -> Tray Icon
+    [X] Enable Tray Icon
+         [ ] Restore normal window geometry on show
+         [ ] Use alternative method for showing dockable windows
+  Options -> Other
+    [X] Workaround for broken window geometry after unmaximize
+         [ ] Extra fix for show from tray
+         [X] Apply second last known geometry
+         [ ] Extra fix on application start
+         [ ] Always restore geometry
+
+
+Windows 7 Home Premium
+======================
+  Options -> Tray Icon
+    [X] Enable Tray Icon
+         [ ] Restore normal window geometry on show
+         [ ] Use alternative method for showing dockable windows
+  Options -> Other
+    [X] Workaround for broken window geometry after unmaximize
+         [ ] Extra fix for show from tray
+         [ ] Apply second last known geometry
+         [ ] Extra fix on application start
+         [ ] Always restore geometry
+
+
+Windows 10 Enterprise
+=====================
+  Options -> Tray Icon
+    [X] Enable Tray Icon
+         [ ] Restore normal window geometry on show
+         [ ] Use alternative method for showing dockable windows
+  Options -> Other
+    [X] Workaround for broken window geometry after unmaximize
+         [ ] Extra fix for show from tray
+         [ ] Apply second last known geometry
+         [ ] Extra fix on application start
+         [ ] Always restore geometry
+
+
+
+
+
+Notes:
+======
+
+KDE 4+5:
+  Setup Window Rules for the mainwindow and the Captcha dialog:
+    Appearance & Fixes -> Focus stealing prevention: [Force] [None]
+
+Mint Xfce:
+  Tray icon looks crappy and does not work:
+    apt-get remove sni-qt
+  Maximized window has no frame which leads to wrong position:
+    Settings -> Window Manager Tweaks -> Accessibility
+      [OFF] Hide frame of windows when maximized
+
+GNOME 3:
+  Install TopIcons Plus (https://github.com/phocean/TopIcons-plus):
+    dnf install git make
+    git clone --depth 1 https://github.com/phocean/TopIcons-plus.git
+    cd TopIcons-plus
+    make install
+  Re-login to GNOME
+    Activities -> Tweak Tool -> Extensions -> [ON] Topicons plus
+
+
+
+
