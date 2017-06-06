@@ -1,7 +1,7 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.9 ; Internal version: 2017-05-02
+README for pyLoad Client v0.4.9 ; Internal version: 2017-06-06
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
@@ -91,27 +91,13 @@ Windows OS:
     https://java.com/en/download/manual.jsp
 
 
-Tested on the following systems:
-================================
-
-Linux OS:
-  Debian Jessie             KDE 4.14
-  Fedora 25 Workstation     GNOME 3.22
-  Lubuntu 16.04             LXDE
-  Mint 18.1                 Cinnamon 3.2.7 / MATE 1.16.1 / Xfce 4.12 / KDE 5.8.5
-  openSUSE Leap 42.2        GNOME 3.20
-  Ubuntu 12.04              Xfce4.8
-Windows OS:
-  Windows 7 Home Premium
-  Windows 10 Enterprise
-
-
 File changes in the qt4gui branch:
 ==================================
 
 pyLoadGui.py (altered)
 icons/abort_small.png          (new)
 icons/add_small.png            (altered)
+icons/logo-gui24x24.png        (new)
 icons/logo-gui64x64.png        (new)
 icons/pull_small.png           (altered)
 icons/push_small.png           (altered)

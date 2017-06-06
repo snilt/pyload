@@ -1,184 +1,139 @@
 
-Debian Jessie, KDE 4.14
-=======================
-  Options -> Tray Icon
-    [X] Enable Tray Icon
-         [ ] Restore normal window geometry on show
-         [ ] Use alternative method for showing dockable windows
-  Options -> Other
-    [X] Workaround for broken window geometry after unmaximize
-         [ ] Extra fix for show from tray
-         [ ] Apply second last known geometry
-         [ ] Extra fix on application start
-         [ ] Always restore geometry
+
+   |==========================|==============================|=========|           |============|
+  ||  Operating System        |  Desktop Environment         |  Setup  ||         || DE version ||
+  ||==========================|==============================|=========||         ||============||
+  ||                          |                              |         ||         ||            ||
+  ||  Debian 8.6              |  KDE                         |    A    ||         ||  4.14.2    ||
+  ||--------------------------|------------------------------|---------||         ||------------||
+  ||  Fedora 25 Workstation   |  Cinnamon                    |    A    ||         ||  3.2.8     ||
+  ||                          |  GNOME                       |    C    ||         ||  3.22.2    ||
+  ||                          |  LXDE                        |    E    ||         ||  0.9.3     ||
+  ||                          |  LXQt                        |    E    ||         ||  0.11.1    ||
+  ||                          |  MATE                        |    C    ||         ||  1.16.2    ||
+  ||                          |  Plasma/KDE                  |    A    ||         ||  5.9.4     ||
+  ||                          |  Xfce                        |    D    ||         ||  4.12      ||
+  ||--------------------------|------------------------------|---------||         ||------------||
+  ||  Linux Mint 18.1         |  Cinnamon                    |    C    ||         ||  3.2.7     ||
+  ||                          |  KDE                         |    A    ||         ||  5.8.5     ||
+  ||                          |  MATE                        |    C    ||         ||  1.16.1    ||
+  ||                          |  Xfce                        |    D    ||         ||  4.12      ||
+  ||--------------------------|------------------------------|---------||         ||------------||
+  ||  Lubuntu 16.04           |  LXDE                        |    E    ||         ||  0.8.2     ||
+  ||--------------------------|------------------------------|---------||         ||------------||
+  ||  Lubuntu 16.10           |  LXDE                        |    E    ||         ||  0.8.2     ||
+  ||--------------------------|------------------------------|---------||         ||------------||
+  ||  openSUSE Leap 42.2      |  GNOME                       |    C    ||         ||  3.20.2    ||
+  ||                          |  KDE                         |    A    ||         ||  5.8.6     ||
+  ||                          |  LXDE                        |    E    ||         ||  0.8.1     ||
+  ||                          |  LXQt                        |    E    ||         ||  0.11.0    ||
+  ||                          |  MATE                        |    A    ||         ||  1.16.1    ||
+  ||                          |  Plasma                      |    A    ||         ||  5.8.6     ||
+  ||                          |  SLE Classic (GNOME)         |    C    ||         ||  3.20.2    ||
+  ||                          |  Xfce                        |    D    ||         ||  4.12      ||
+  ||--------------------------|------------------------------|---------||         ||------------||
+  ||  Ubuntu 12.04            |  Xfce                        |    B    ||         ||  4.8       ||
+  ||--------------------------|------------------------------|---------||         ||------------||
+  ||  Ubuntu 16.04            |  Budgie                      |    A    ||         ||  10.3.1    ||
+  ||                          |  Cinnamon                    |    C    ||         ||  2.8.6     ||
+  ||                          |  Cinnamon 3.X.X              |    A    ||         ||  3.4.1     ||
+  ||                          |  GNOME                       |    C    ||         ||  3.18.2    ||
+  ||                          |  Lubuntu/LXDE                |    E    ||         ||  0.8.2     ||
+  ||                          |  MATE                        |    A    ||         ||  1.12.1    ||
+  ||                          |  Plasma/KDE                  |    A    ||         ||  5.5.5     ||
+  ||                          |  Ubuntu/Unity                |    F    ||         ||  7.4.0     ||
+  ||                          |  Xubuntu/Xfce                |    D    ||         ||  4.12      ||
+  ||--------------------------|------------------------------|---------||         ||------------||
+  ||  Ubuntu 17.04            |  Budgie                      |    C    ||         ||  10.2.9    ||
+  ||                          |  Cinnamon                    |    C    ||         ||  3.2.7     ||
+  ||                          |  GNOME                       |    C    ||         ||  3.24.1    ||
+  ||                          |  GNOME Flashback (Compiz)    |    F    ||         ||  3.24.1    ||
+  ||                          |  GNOME Flashback (Metacity)  |    A    ||         ||  3.24.1    ||
+  ||                          |  Lubuntu/LXDE                |    E    ||         ||  0.9.3     ||
+  ||                          |  MATE                        |    A    ||         ||  1.18.0    ||
+  ||                          |  Plasma/KDE                  |    A    ||         ||  5.9.4     ||
+  ||                          |  Ubuntu/Unity                |    F    ||         ||  7.5.0     ||
+  ||                          |  Xubuntu/Xfce                |    D    ||         ||  4.12      ||
+  ||--------------------------|------------------------------|---------||         ||------------||
+  ||  Windows 7 Home Premium  |                              |    A    ||         || 2017-03-30 ||
+  ||  Windows 10 Enterprise   |                              |    A    ||         || 2017-03-30 ||
+  ||                          |                              |         ||         ||            ||
+   |==========================|==============================|=========|           |============|
 
 
-Fedora 25 Workstation, GNOME 3.22
-=================================
-  Options -> Tray Icon
-    [X] Enable Tray Icon
-         [ ] Restore normal window geometry on show
-         [ ] Use alternative method for showing dockable windows
-  Options -> Other
-    [X] Workaround for broken window geometry after unmaximize
-         [X] Extra fix for show from tray
-         [ ] Apply second last known geometry
-         [ ] Extra fix on application start
-         [ ] Always restore geometry
-
-
-Lubuntu 16.04, LXDE
-===================
-  Options -> Tray Icon
-    [X] Enable Tray Icon
-         [X] Restore normal window geometry on show
-         [ ] Use alternative method for showing dockable windows
-  Options -> Other
-    [X] Workaround for broken window geometry after unmaximize
-         [X] Extra fix for show from tray
-         [ ] Apply second last known geometry
-         [ ] Extra fix on application start
-         [X] Always restore geometry
-
-
-Mint 18.1, Cinnamon 3.2.7
-=========================
-  Options -> Tray Icon
-    [X] Enable Tray Icon
-         [ ] Restore normal window geometry on show
-         [ ] Use alternative method for showing dockable windows
-  Options -> Other
-    [X] Workaround for broken window geometry after unmaximize
-         [X] Extra fix for show from tray
-         [ ] Apply second last known geometry
-         [ ] Extra fix on application start
-         [ ] Always restore geometry
-
-
-Mint 18.1, MATE 1.16.1
-======================
-  Options -> Tray Icon
-    [X] Enable Tray Icon
-         [ ] Restore normal window geometry on show
-         [ ] Use alternative method for showing dockable windows
-  Options -> Other
-    [X] Workaround for broken window geometry after unmaximize
-         [X] Extra fix for show from tray
-         [ ] Apply second last known geometry
-         [ ] Extra fix on application start
-         [ ] Always restore geometry
-
-
-Mint 18.1, Xfce 4.12
-====================
-  Options -> Tray Icon
-    [X] Enable Tray Icon
-         [ ] Restore normal window geometry on show
-         [ ] Use alternative method for showing dockable windows
-  Options -> Other
-    [X] Workaround for broken window geometry after unmaximize
-         [ ] Extra fix for show from tray
-         [X] Apply second last known geometry
-         [X] Extra fix on application start
-         [ ] Always restore geometry
-
-
-Mint 18.1, KDE 5.8.5
-====================
-  Options -> Tray Icon
-    [X] Enable Tray Icon
-         [ ] Restore normal window geometry on show
-         [ ] Use alternative method for showing dockable windows
-  Options -> Other
-    [X] Workaround for broken window geometry after unmaximize
-         [ ] Extra fix for show from tray
-         [ ] Apply second last known geometry
-         [ ] Extra fix on application start
-         [ ] Always restore geometry
-
-
-openSUSE Leap 42.2, GNOME 3.20
-==============================
-  Options -> Tray Icon
-    [X] Enable Tray Icon
-         [ ] Restore normal window geometry on show
-         [ ] Use alternative method for showing dockable windows
-  Options -> Other
-    [X] Workaround for broken window geometry after unmaximize
-         [X] Extra fix for show from tray
-         [ ] Apply second last known geometry
-         [ ] Extra fix on application start
-         [ ] Always restore geometry
-
-
-Ubuntu 12.04, Xfce4.8
-=====================
-  Options -> Tray Icon
-    [X] Enable Tray Icon
-         [ ] Restore normal window geometry on show
-         [ ] Use alternative method for showing dockable windows
-  Options -> Other
-    [X] Workaround for broken window geometry after unmaximize
-         [ ] Extra fix for show from tray
-         [X] Apply second last known geometry
-         [ ] Extra fix on application start
-         [ ] Always restore geometry
-
-
-Windows 7 Home Premium
-======================
-  Options -> Tray Icon
-    [X] Enable Tray Icon
-         [ ] Restore normal window geometry on show
-         [ ] Use alternative method for showing dockable windows
-  Options -> Other
-    [X] Workaround for broken window geometry after unmaximize
-         [ ] Extra fix for show from tray
-         [ ] Apply second last known geometry
-         [ ] Extra fix on application start
-         [ ] Always restore geometry
-
-
-Windows 10 Enterprise
-=====================
-  Options -> Tray Icon
-    [X] Enable Tray Icon
-         [ ] Restore normal window geometry on show
-         [ ] Use alternative method for showing dockable windows
-  Options -> Other
-    [X] Workaround for broken window geometry after unmaximize
-         [ ] Extra fix for show from tray
-         [ ] Apply second last known geometry
-         [ ] Extra fix on application start
-         [ ] Always restore geometry
+   |=================================================|=========|=========|=========|=========|=========|=========|
+  ||  Setup:                                         |    A    |    B    |    C    |    D    |    E    |    F    ||
+  ||=================================================|=========|=========|=========|=========|=========|=========||
+  ||  Options -> Tray Icon                           |         |         |         |         |         |         ||
+  ||    Enable Tray Icon                             |   [X]   |   [X]   |   [X]   |   [X]   |   [X]   |   [X]   ||
+  ||      Restore normal window geometry on show     |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [X]  ||
+  ||                                                 |         |         |         |         |         |         ||
+  ||-------------------------------------------------|---------|---------|---------|---------|---------|---------||
+  ||  Options -> Other                               |         |         |         |         |         |         ||
+  ||    Workaround for broken window geometry...     |   [X]   |   [X]   |   [X]   |   [X]   |   [X]   |   [ ]   ||
+  ||      Extra fix for show from tray               |    [ ]  |    [ ]  |    [X]  |    [ ]  |    [X]  |    [ ]  ||
+  ||      Apply second last known geometry           |    [ ]  |    [X]  |    [ ]  |    [X]  |    [ ]  |    [ ]  ||
+  ||      Extra fix on application start             |    [ ]  |    [ ]  |    [ ]  |    [X]  |    [ ]  |    [ ]  ||
+  ||      Always restore geometry                    |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [ ]  ||
+  ||    Fix for resize                               |   [ ]   |   [ ]   |   [ ]   |   [ ]   |   [X]   |   [ ]   ||
+  ||                                                 |         |         |         |         |         |         ||
+   |=================================================|=========|=========|=========|=========|=========|=========|
 
 
 
+Hints
+=====
+
+  GNOME 3
+  -------
+    TopIcons Plus (https://github.com/phocean/TopIcons-plus):
+      dnf install git make
+      cd /tmp
+      git clone --depth 1 https://github.com/phocean/TopIcons-plus.git
+      cd TopIcons-plus
+      make install
+    Re-login to GNOME
+      Activities -> Tweak Tool -> Extensions -> [ON] Topicons plus
+
+  KDE
+  ---
+    Setup Window Rules for the mainwindow and the Captcha dialog:
+      Appearance & Fixes -> Focus stealing prevention: [Force] [None]
+
+  Lubuntu
+  -------
+    Broken desktop icon theme causing crash on application start
+      Open a terminal and check with:
+        pyLoadGui.py -i
+
+  Xfce
+  ----
+    Maximized window has no frame which leads to wrong position when showing from tray:
+      Settings -> Window Manager Tweaks -> Accessibility
+        [OFF] Hide frame of windows when maximized
+
+  Tray icon left-click shows the menu instead off toggling hide/show
+  ------------------------------------------------------------------
+    apt-get remove sni-qt    # might or might not help
+
+  Tray icon not shown
+  -------------------
+    apt-get install sni-qt
+    Note: On GNOME 3 the tray icon area is hidden by default and can be shown
+          by clicking around at the bottom left corner of the screen
 
 
-Notes:
-======
 
-KDE 4+5:
-  Setup Window Rules for the mainwindow and the Captcha dialog:
-    Appearance & Fixes -> Focus stealing prevention: [Force] [None]
+DE version
+==========
 
-Mint Xfce:
-  Tray icon looks crappy and does not work:
-    apt-get remove sni-qt
-  Maximized window has no frame which leads to wrong position:
-    Settings -> Window Manager Tweaks -> Accessibility
-      [OFF] Hide frame of windows when maximized
-
-GNOME 3:
-  Install TopIcons Plus (https://github.com/phocean/TopIcons-plus):
-    dnf install git make
-    git clone --depth 1 https://github.com/phocean/TopIcons-plus.git
-    cd TopIcons-plus
-    make install
-  Re-login to GNOME
-    Activities -> Tweak Tool -> Extensions -> [ON] Topicons plus
-
-
-
+  Budgie:         budgie-desktop --version
+  Cinnamon:       cinnamon --version
+  GNOME 3:        gnome --version   # alternative: cat /usr/share/gnome/gnome-version.xml
+  LXDE:           lxpanel --version
+  LXQt:           lxqt-about
+  MATE:           mate-about
+  Plasma/KDE 5:   plasmashell -v
+  Ubuntu/Unity:   unity --version
+  Xfce:           xfce4-about
 
