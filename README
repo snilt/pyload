@@ -1,7 +1,7 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.9 ; Internal version: 2017-06-06
+README for pyLoad Client v0.4.9 ; Internal version: 2017-06-22
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
@@ -66,6 +66,11 @@ Linux OS:
   Fedora:
     dnf install python python2-crypto pyOpenSSL python-pycurl python2-pillow python-beaker
     dnf install PyQt4 notify-python tesseract gocr unar rhino pygtk2
+  Arch:
+    pacman -S --needed python2 python2-crypto python2-pyopenssl python2-pycurl
+    pacman -S --needed python2-pillow python2-beaker python2-funcsigs python2-pyqt4
+    pacman -S --needed python2-notify tesseract gocr unrar rhino
+    Run by: 'python2 pyLoadGui.py'
 Windows OS:
   Download and install Python 32-bit (even if your Windows is 64-bit)
     https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi

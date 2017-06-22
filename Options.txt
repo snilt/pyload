@@ -4,6 +4,19 @@
   ||  Operating System        |  Desktop Environment         |  Setup  ||         || DE version ||
   ||==========================|==============================|=========||         ||============||
   ||                          |                              |         ||         ||            ||
+  ||  Arch Linux 2017-06-13   |  Budgie                      |    C    ||         ||  10.3.1    ||
+  ||                          |  Cinnamon                    |    A    ||         ||  3.2.8     ||
+  ||                          |  Deepin                      |    A    ||         ||  15.4      ||
+  ||                          |  Enlightenment               |    G    ||         ||  0.21.3    ||
+  ||                          |  GNOME                       |    C    ||         ||  3.24.2    ||
+  ||                          |  Lumina                      |    B    ||         ||  1.2.0     ||
+  ||                          |  LXDE                        |    E    ||         ||  0.9.3     ||
+  ||                          |  LXQt                        |    E    ||         ||  0.11.0    ||
+  ||                          |  MATE                        |    A    ||         ||  1.18.0    ||
+  ||                          |  Moksha                      |    B    ||         ||  0.2.0.0   ||
+  ||                          |  KDE                         |    A    ||         ||  5.10.1    ||
+  ||                          |  Xfce                        |    D    ||         ||  4.12      ||
+  ||--------------------------|------------------------------|---------||         ||------------||
   ||  Debian 8.6              |  KDE                         |    A    ||         ||  4.14.2    ||
   ||--------------------------|------------------------------|---------||         ||------------||
   ||  Fedora 25 Workstation   |  Cinnamon                    |    A    ||         ||  3.2.8     ||
@@ -61,31 +74,31 @@
    |==========================|==============================|=========|           |============|
 
 
-   |=================================================|=========|=========|=========|=========|=========|=========|
-  ||  Setup:                                         |    A    |    B    |    C    |    D    |    E    |    F    ||
-  ||=================================================|=========|=========|=========|=========|=========|=========||
-  ||  Options -> Tray Icon                           |         |         |         |         |         |         ||
-  ||    Enable Tray Icon                             |   [X]   |   [X]   |   [X]   |   [X]   |   [X]   |   [X]   ||
-  ||      Restore normal window geometry on show     |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [X]  ||
-  ||                                                 |         |         |         |         |         |         ||
-  ||-------------------------------------------------|---------|---------|---------|---------|---------|---------||
-  ||  Options -> Other                               |         |         |         |         |         |         ||
-  ||    Workaround for broken window geometry...     |   [X]   |   [X]   |   [X]   |   [X]   |   [X]   |   [ ]   ||
-  ||      Extra fix for show from tray               |    [ ]  |    [ ]  |    [X]  |    [ ]  |    [X]  |    [ ]  ||
-  ||      Apply second last known geometry           |    [ ]  |    [X]  |    [ ]  |    [X]  |    [ ]  |    [ ]  ||
-  ||      Extra fix on application start             |    [ ]  |    [ ]  |    [ ]  |    [X]  |    [ ]  |    [ ]  ||
-  ||      Always restore geometry                    |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [ ]  ||
-  ||    Fix for resize                               |   [ ]   |   [ ]   |   [ ]   |   [ ]   |   [X]   |   [ ]   ||
-  ||                                                 |         |         |         |         |         |         ||
-   |=================================================|=========|=========|=========|=========|=========|=========|
+   |=================================================|=========|=========|=========|=========|=========|=========|=========|
+  ||  Setup:                                         |    A    |    B    |    C    |    D    |    E    |    F    |    G    ||
+  ||=================================================|=========|=========|=========|=========|=========|=========|=========||
+  ||  Options -> Tray Icon                           |         |         |         |         |         |         |         ||
+  ||    Enable Tray Icon                             |   [X]   |   [X]   |   [X]   |   [X]   |   [X]   |   [X]   |   [X]   ||
+  ||      Restore normal window geometry on show     |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [X]  |    [X]  ||
+  ||                                                 |         |         |         |         |         |         |         ||
+  ||-------------------------------------------------|---------|---------|---------|---------|---------|---------|---------||
+  ||  Options -> Other                               |         |         |         |         |         |         |         ||
+  ||    Workaround for broken window geometry...     |   [X]   |   [X]   |   [X]   |   [X]   |   [X]   |   [ ]   |   [X]   ||
+  ||      Extra fix for show from tray               |    [ ]  |    [ ]  |    [X]  |    [ ]  |    [X]  |    [ ]  |    [X]  ||
+  ||      Apply second last known geometry           |    [ ]  |    [X]  |    [ ]  |    [X]  |    [ ]  |    [ ]  |    [ ]  ||
+  ||      Extra fix on application start             |    [ ]  |    [ ]  |    [ ]  |    [X]  |    [ ]  |    [ ]  |    [ ]  ||
+  ||      Always restore geometry                    |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [ ]  |    [ ]  ||
+  ||    Fix for resize                               |   [ ]   |   [ ]   |   [ ]   |   [ ]   |   [X]   |   [ ]   |   [ ]   ||
+  ||                                                 |         |         |         |         |         |         |         ||
+   |=================================================|=========|=========|=========|=========|=========|=========|=========|
 
 
 
 Hints
 =====
 
-  GNOME 3
-  -------
+  GNOME
+  -----
     TopIcons Plus (https://github.com/phocean/TopIcons-plus):
       dnf install git make
       cd /tmp
@@ -119,7 +132,7 @@ Hints
   Tray icon not shown
   -------------------
     apt-get install sni-qt
-    Note: On GNOME 3 the tray icon area is hidden by default and can be shown
+    Note: On GNOME the tray icon area is hidden by default and can be shown
           by clicking around at the bottom left corner of the screen
 
 
@@ -129,10 +142,14 @@ DE version
 
   Budgie:         budgie-desktop --version
   Cinnamon:       cinnamon --version
-  GNOME 3:        gnome --version   # alternative: cat /usr/share/gnome/gnome-version.xml
+  Deepin:         Control Center -> System Information
+  Enlightenment:  enlightenment --version
+  GNOME:          gnome --version   # alternative: cat /usr/share/gnome/gnome-version.xml
+  Lumina:         lumina-desktop --version
   LXDE:           lxpanel --version
   LXQt:           lxqt-about
   MATE:           mate-about
+  Moksha:         enlightenment --version
   Plasma/KDE 5:   plasmashell -v
   Ubuntu/Unity:   unity --version
   Xfce:           xfce4-about
