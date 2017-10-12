@@ -17,6 +17,11 @@
   ||                          |  KDE                         |    A    ||         ||  5.10.1    ||
   ||                          |  Xfce                        |    D    ||         ||  4.12      ||
   ||--------------------------|------------------------------|---------||         ||------------||
+  ||  CentOS 7.4              |  GNOME                       |    C    ||         ||  3.22.2    ||
+  ||                          |  KDE                         |    A    ||         ||  4.14.8    ||
+  ||                          |  MATE                        |    A    ||         ||  1.16.2    ||
+  ||                          |  Xfce                        |    D    ||         ||  4.12      ||
+  ||--------------------------|------------------------------|---------||         ||------------||
   ||  Debian 8.6              |  KDE                         |    A    ||         ||  4.14.2    ||
   ||--------------------------|------------------------------|---------||         ||------------||
   ||  Fedora 25 Workstation   |  Cinnamon                    |    A    ||         ||  3.2.8     ||
@@ -27,7 +32,7 @@
   ||                          |  Plasma/KDE                  |    A    ||         ||  5.9.4     ||
   ||                          |  Xfce                        |    D    ||         ||  4.12      ||
   ||--------------------------|------------------------------|---------||         ||------------||
-  ||  FreeBSD 11              |  GNOME                       |    C    ||         ||  3.18.2    ||
+  ||  FreeBSD 11.0            |  GNOME                       |    C    ||         ||  3.18.2    ||
   ||                          |  KDE                         |    A    ||         ||  4.14.30   ||
   ||                          |  LXDE                        |    E    ||         ||  0.9.3     ||
   ||                          |  MATE                        |    A    ||         ||  1.12.1    ||
@@ -100,13 +105,19 @@
 
 
 
-Hints
-=====
+Notes:
+======
 
-  GNOME
-  -----
-    TopIcons Plus (https://github.com/phocean/TopIcons-plus):
-      dnf install git make
+  GNOME:
+    The tray icon area is hidden by default and can be shown
+      by clicking around at the bottom left corner of the screen
+    Or try TopIcons Plus (https://github.com/phocean/TopIcons-plus):
+      dnf install git make                       # Fedora
+      zypper install git make                    # openSUSE
+      apt-get install git make gnome-tweak-tool  # Ubuntu
+      yum install git make                       # CentOS
+      pacman -S --needed git make                # Arch Linux
+      pkg install git                            # FreeBSD
       cd /tmp
       git clone --depth 1 https://github.com/phocean/TopIcons-plus.git
       cd TopIcons-plus
@@ -114,37 +125,30 @@ Hints
     Re-login to GNOME
       Activities -> Tweak Tool -> Extensions -> [ON] Topicons plus
 
-  KDE
-  ---
+  KDE:
     Setup Window Rules for the mainwindow and the Captcha dialog:
       Appearance & Fixes -> Focus stealing prevention: [Force] [None]
 
-  Lubuntu
-  -------
+  Lubuntu:
     Broken desktop icon theme causing crash on application start
       Open a terminal and check with:
         pyLoadGui.py -i
 
-  Xfce
-  ----
+  Xfce:
     Maximized window has no frame which leads to wrong position when showing from tray:
       Settings -> Window Manager Tweaks -> Accessibility
         [OFF] Hide frame of windows when maximized
 
-  Tray icon left-click shows the menu instead off toggling hide/show
-  ------------------------------------------------------------------
-    apt-get remove sni-qt    # might or might not help
-
-  Tray icon not shown
-  -------------------
-    apt-get install sni-qt
-    Note: On GNOME the tray icon area is hidden by default and can be shown
-          by clicking around at the bottom left corner of the screen
+  Ubuntu:
+    Tray icon not shown:
+      apt-get install sni-qt
+    Tray icon left-click shows the menu instead off toggling hide/show:
+      apt-get remove sni-qt    # might or might not help
 
 
 
-DE version
-==========
+Desktop Environment (DE) versions:
+==================================
 
   Budgie:         budgie-desktop --version
   Cinnamon:       cinnamon --version

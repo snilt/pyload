@@ -1,7 +1,7 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.9 ; Internal version: 2017-10-05
+README for pyLoad Client v0.4.9 ; Internal version: 2017-10-12
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
@@ -28,8 +28,8 @@ Some (new) features:
 - Internal server (standalone mode)
 
 
-Download
-========
+Download:
+=========
 
 From the GitHub website:
   https://github.com/snilt/pyload/releases/latest
@@ -53,8 +53,8 @@ PyQt4
 Python bindings for libnotify (Linux only)
 
 
-Installation of dependencies
-============================
+Installation of dependencies:
+=============================
 
 Linux OS:
   Ubuntu/Debian/Debian-based:
@@ -71,6 +71,9 @@ Linux OS:
     pacman -S --needed python2-pillow python2-beaker python2-funcsigs python2-pyqt4
     pacman -S --needed python2-notify tesseract gocr unrar rhino
     Run by: 'python2 pyLoadGui.py'
+  CentOS:
+    yum install python python2-crypto pyOpenSSL python-pycurl python-pillow
+    yum install python-beaker PyQt4 notify-python tesseract unar rhino pygtk2
 Unix-like OS:
   FreeBSD:
     pkg install python27 py27-pycrypto py27-openssl py27-pycurl py27-pillow py27-beaker
