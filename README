@@ -1,7 +1,7 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.9 ; Internal version: 2017-11-19
+README for pyLoad Client v0.4.9 ; Internal version: 2019-09-14
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
@@ -156,7 +156,8 @@ module/gui/Queue.py             (altered)
 module/gui/SettingsWidget.py    (altered)
 module/gui/Tools.py             (new)
 module/gui/XMLParser.py         (altered)
-module/remote/thriftbackend/pyload.thrift   (altered)             * affects the thrift server *
-module/remote/thriftbackend/Socket.py       (altered)             * affects the thrift server *
-module/remote/thriftbackend/ThriftClient.py (altered)             * affects the cli client    *
-module/remote/thriftbackend/thriftgen/pyload/ttypes.py (altered)  * affects the api           *
+module/remote/ThriftBackend.py                         (altered)  * ThriftBackend *
+module/remote/thriftbackend/pyload.thrift              (altered)  * ThriftBackend *
+module/remote/thriftbackend/CoreSocket.py              (new)      * ThriftBackend *
+module/remote/thriftbackend/ThriftClient.py            (altered)  * ThriftBackend *
+module/remote/thriftbackend/thriftgen/pyload/ttypes.py (altered)  * ThriftBackend *
