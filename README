@@ -1,11 +1,17 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.9 ; Internal version: 2020-01-10
+README for pyLoad Client v0.4.20 ; Internal version: 2020-02-27
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
 https://github.com/snilt/pyload/tree/qt4gui
+
+NOTE: If you update from previous pyLoad Client version 0.4.9 then you must
+      delete the userplugins directory from your config folder at first.
+      - Start pyLoad Client, goto the 'Log' tab and write down the value of 'Configuration directory'.
+      - Stop pyLoad Client, navigate to the 'Configuration directory' and
+        delete the 'userplugins' subdirectory.
 
 
 Some (new) features:
@@ -137,7 +143,6 @@ locale/ru/LC_MESSAGES/pyLoadGui.mo    (altered)
 locale/sr/LC_MESSAGES/pyLoadGui.mo    (altered)
 locale/sv/LC_MESSAGES/pyLoadGui.mo    (altered)
 locale/tr/LC_MESSAGES/pyLoadGui.mo    (altered)
-module/common/pylgettext.py (altered)
 module/config/gui_default.xml (altered)
 module/gui/AccountEdit.py       (altered)
 module/gui/Accounts.py          (altered)
