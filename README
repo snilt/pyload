@@ -1,22 +1,23 @@
 This is a fork of https://github.com/pyload/pyload
-with a reworked Qt4 GUI on top of the pyLoad stable branch.
+with a reworked Qt4/Qt5 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.20 ; Internal version: 2020-02-27
+README for pyLoad Client v0.4.20 ; Internal version: 2020-05-15
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
 https://github.com/snilt/pyload/tree/qt4gui
 
-NOTE: If you update from previous pyLoad Client version 0.4.9 then you must
-      delete the userplugins directory from your config folder at first.
-      - Start pyLoad Client, goto the 'Log' tab and write down the value of 'Configuration directory'.
-      - Stop pyLoad Client, navigate to the 'Configuration directory' and
-        delete the 'userplugins' subdirectory.
+
+NOTE: If you update from previous pyLoad Client version 0.4.9
+      then you must delete the userplugins directory from your config folder at first.
+      Start pyLoad Client, goto the 'Log' tab and write down the value of 'Configuration directory'.
+      Stop pyLoad Client, navigate to the 'Configuration directory' and delete the 'userplugins' subdirectory.
 
 
 Some (new) features:
 ====================
 
+- Qt4 and Qt5 support
 - Drag'n'Drop
 - Sorting of packages and links
 - Moving of links to another package (Collector only)
@@ -55,49 +56,150 @@ Dependencies in addition to the dependencies of pyLoad (https://pyload.net):
 ============================================================================
 
 Python 2.7
-PyQt4
-Python bindings for libnotify (Linux only)
+PyQt4 or PyQt5
 
 
 Installation of dependencies:
 =============================
 
-Linux OS:
+Qt graphical library:
+  pyLoad Client supports PyQt4 and PyQt5. PyQt provides Python bindings for Qt. PyQt depends on Qt.
+  On some systems Qt4 and Qt5 can be installed side by side.
+  Before installing PyQt, you may want to check which, or if any, Qt version is already installed on your system.
+  Then install the PyQt version which belongs to an existing Qt installation
+  if you want to avoid the installation of another Qt version.
+  pyLoad Client detects the installed PyQt version on startup, if PyQt4 and PyQt5
+  are both installed then PyQt4 will be used.
+  You can force the PyQt version to use by command line options.
+  Using PyQt5 on an older Qt4 based Linux/Unix-like desktop might require a bit of extra effort,
+  see desktop notifications notes below.
+
+Desktop notifications:
+  pyLoad Client uses the Qt library which has built-in support for desktop notifications, it should work seamless.
+  However, on Linux/Unix-like OSs, additional packages might provide better desktop integration:
+    First option (recommended):
+      notify2  ---  Python interface to DBus notifications
+        This is a replacement for the older pynotify.
+        If your Linux distribution does not have a suitable python 2.7 package,
+        you may want to install it via the python package manager, see: https://pypi.org/project/notify2
+    Second option:
+      pynotify  ---  Python bindings for libnotify
+        This does not work for pyLoad Client on some (modern) systems.
+        This can be the reason for pyLoad Client to crash with a segmentation fault on every startup
+        This may just work fine for pyLoad Client (even on modern systems)
+        On some systems you possibly also must install
+        'Python bindings for the GTK+ widget set' (python-gtk/pygtk2) to get this working correctly.
+    Notes:
+      By default pyLoad Client automatically chooses the method to use for displaying desktop notifications
+      in the following order: notify2, pynotify, qt_tray
+      You can force the desktop notification method by command line options.
+      If you want to use pynotify together with PyQt5,
+      but pyLoad Client crashes with a segmentation fault on every startup:
+        Install 'Qt 5 extra widget styles' (on Debian via: apt-get install qt5-style-plugins)
+        and start pyLoad Client like this: QT_QPA_PLATFORMTHEME=gtk2 ./pyLoadGui.py
+        If that does not help:
+          Additionally install and setup the 'Qt5 Configuration Utility' (qt5ct)
+          and start pyLoad Client like this: QT_QPA_PLATFORMTHEME=qt5ct ./pyLoadGui.py
+
+OpenSSL: pyOpenSSL can be used for connections between pyLoad Client and a remote pyLoad server.
+
+
+Linux/Unix-like OSs:
+--------------------
   Ubuntu/Debian/Debian-based:
-    apt-get install python python-crypto python-openssl python-pycurl python-imaging python-beaker
-    apt-get install python-qt4 python-notify tesseract-ocr tesseract-ocr-eng gocr unrar rhino
+    apt-get install python python-crypto python-pycurl python-imaging python-beaker rhino
+    PyQt4: apt-get install python-qt4
+    PyQt5: apt-get install python-pyqt5
+    Optional:
+      Desktop notifications:
+        notify2: apt-get install python-notify2
+        pynotify: apt-get install python-notify
+      pyOpenSSL: apt-get install python-openssl
+
+*The distros below are untested*
+
   openSUSE:
-    zypper install python python-pycrypto python-pyOpenSSL python-pycurl python-Pillow python-Beaker
-    zypper install python-qt4 python-notify tesseract-ocr gocr unrar rhino python-gtk
+    zypper install python python-pycrypto python-pycurl python-Pillow python-Beaker rhino
+    PyQt4: zypper install python-qt4
+    PyQt5: zypper install python-qt5
+    Optional:
+      Desktop notifications:
+        notify2: zypper install python-notify2
+        pynotify: zypper install python-notify   #python-gtk
+      pyOpenSSL: zypper install python-pyOpenSSL
   Fedora:
-    dnf install python python2-crypto pyOpenSSL python-pycurl python2-pillow python-beaker
-    dnf install PyQt4 notify-python tesseract gocr unar rhino pygtk2
+    dnf install python python2-crypto python-pycurl python2-pillow python-beaker rhino
+    PyQt4: dnf install PyQt4
+    PyQt5: dnf install python2-qt5
+    Optional:
+      Desktop notifications:
+        notify2: dnf install python-notify2
+        pynotify: dnf install notify-python   #pygtk2
+      pyOpenSSL: dnf install pyOpenSSL
   Arch:
-    pacman -S --needed python2 python2-crypto python2-pyopenssl python2-pycurl
-    pacman -S --needed python2-pillow python2-beaker python2-funcsigs python2-pyqt4
-    pacman -S --needed python2-notify tesseract gocr unrar rhino
-    Run by: 'python2 pyLoadGui.py'
+    pacman -S --needed python2 python2-crypto python2-pycurl python2-pillow python2-beaker python2-funcsigs rhino
+    PyQt4: pacman -S --needed python2-pyqt4
+    PyQt5: pacman -S --needed python2-pyqt5
+    Optional:
+      Desktop notifications:
+        notify2: pacman -S --needed python-notify2
+        pynotify: pacman -S --needed python2-notify
+      pyOpenSSL: pacman -S --needed python2-pyopenssl
+    (Run by: 'python2 pyLoadGui.py')
   CentOS:
-    yum install python python2-crypto pyOpenSSL python-pycurl python-pillow
-    yum install python-beaker PyQt4 notify-python tesseract unar rhino pygtk2
-Unix-like OS:
+    yum install python python2-crypto python-pycurl python-pillow python-beaker rhino
+    PyQt4: yum install PyQt4
+    PyQt5: No package? https://github.com/pyqt/python-qt5/wiki/Compiling-for-CentOS-7
+    Optional:
+      Desktop notifications:
+        notify2: I could not find a suitable package. To install it via the python package manager do:
+            yum install python2-pip && pip2 install notify2
+        pynotify: yum install notify-python   #pygtk2
+      pyOpenSSL: yum install pyOpenSSL
   FreeBSD:
-    pkg install python27 py27-pycrypto py27-openssl py27-pycurl py27-pillow py27-beaker
-    pkg install py27-sqlite3 py27-qt4 py27-notify tesseract tesseract-data gocr unrar rhino
-    Run by: 'python2 pyLoadGui.py'
+    pkg install python27 py27-pycrypto py27-pycurl py27-pillow py27-beaker py27-sqlite3 rhino
+    PyQt4: pkg install py27-qt4
+    PyQt5: pkg install py27-qt5   # no package? install from ports?
+    Optional:
+      Desktop notifications:
+        notify2: pkg install py27-notify2
+        pynotify: pkg install py27-notify
+      pyOpenSSL: pkg install py27-openssl
+    (Run by: 'python2 pyLoadGui.py')
+
+
 Windows OS:
-  Download and install Python 32-bit (even if your Windows is 64-bit)
-    https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi
-    Install with default features
-  Download and install PyQt4
-    https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x32.exe
-    Select type of install: Minimal
-  Download and install pyOpenSSL
-    https://www.egenix.com/cryptodownload/?file=egenix-pyopenssl-0.13.16.win32-py2.7.msi
-  Install Python packages from Windows Command Prompt:
-    C:\Python27\python -m pip install -U pip setuptools
+-----------
+  PyQt4:
+    32-bit (works on Windows 64-bit too):
+      Download and install Python:
+        https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi
+        Install with default features
+      Download and install PyQt4:
+        https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x32.exe
+        Select type of install: Minimal
+    64-bit:
+      Download and install Python:
+        https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi
+        Install with default features
+      Download and install PyQt4:
+        https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x64.exe
+        Select type of install: Minimal
+    Setup Python Package Manager from Windows Command Prompt:
+      C:\Python27\python -m pip install -U pip setuptools
+
+  PyQt5 (64-bit only) *untested*:
+    Download and install Python:
+      https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi
+      Install with default features
+    Setup Python Package Manager from Windows Command Prompt:
+      C:\Python27\python -m pip install -U pip setuptools
+    Install PyQt5 from Windows Command Prompt:
+      C:\Python27\python -m pip install python-qt5
+
+  Install required packages from Windows Command Prompt:
     C:\Python27\python -m pip install pycurl pillow pycryptodome
-  Download and install Rhino:
+  Download and install Rhino (for ClickNLoad and other plugins):
     https://github.com/mozilla/rhino/releases/download/Rhino1_7_7_1_RELEASE/rhino-1.7.7.1.zip
     Double-click on the downloaded file, navigate into the "lib" folder,
       right-click on the rhino-1.7.7.1 file and select Copy
@@ -106,63 +208,9 @@ Windows OS:
     Open a Command Prompt:
       cd pyload
       ren rhino-1.7.7.1.jar js.jar
-  Download and install Java:
+  Rhino needs Java, download and install:
     https://java.com/en/download/manual.jsp
-
-
-File changes in the qt4gui branch:
-==================================
-
-pyLoadGui.py (altered)
-icons/abort_small.png          (new)
-icons/add_small.png            (altered)
-icons/logo-gui24x24.png        (new)
-icons/logo-gui64x64.png        (new)
-icons/pull_small.png           (altered)
-icons/push_small.png           (altered)
-icons/refresh_small.png        (altered)
-icons/toolbar_add.png          (altered)
-icons/toolbar_pause.png        (altered)
-icons/toolbar_refresh.png      (new)
-icons/toolbar_remove.png       (altered)
-icons/toolbar_start.png        (altered)
-icons/toolbar_stop.png         (altered)
-icons/toolbar_stop_nopause.png (new)
-locale/gui.pot (altered)
-locale/cs/LC_MESSAGES/pyLoadGui.mo    (altered)
-locale/de/LC_MESSAGES/pyLoadGui.mo    (altered)
-locale/es/LC_MESSAGES/pyLoadGui.mo    (altered)
-locale/fi/LC_MESSAGES/pyLoadGui.mo    (altered)
-locale/fr/LC_MESSAGES/pyLoadGui.mo    (altered)
-locale/it/LC_MESSAGES/pyLoadGui.mo    (altered)
-locale/nl/LC_MESSAGES/pyLoadGui.mo    (altered)
-locale/pl/LC_MESSAGES/pyLoadGui.mo    (altered)
-locale/pt_BR/LC_MESSAGES/pyLoadGui.mo (altered)
-locale/ro/LC_MESSAGES/pyLoadGui.mo    (altered)
-locale/ru/LC_MESSAGES/pyLoadGui.mo    (altered)
-locale/sr/LC_MESSAGES/pyLoadGui.mo    (altered)
-locale/sv/LC_MESSAGES/pyLoadGui.mo    (altered)
-locale/tr/LC_MESSAGES/pyLoadGui.mo    (altered)
-module/config/gui_default.xml (altered)
-module/gui/AccountEdit.py       (altered)
-module/gui/Accounts.py          (altered)
-module/gui/CaptchaDialog.py     (new)
-module/gui/Collector.py         (altered)
-module/gui/ConnectionManager.py (altered)
-module/gui/connector.py         (altered)
-module/gui/CoreConfigParser.py  (altered)
-module/gui/LinkDock.py          (altered)
-module/gui/LoggingLevels.py     (new)
-module/gui/MainWindow.py        (altered)
-module/gui/Options.py           (new)
-module/gui/Overview.py          (altered)
-module/gui/PackageDock.py       (altered)
-module/gui/Queue.py             (altered)
-module/gui/SettingsWidget.py    (altered)
-module/gui/Tools.py             (new)
-module/gui/XMLParser.py         (altered)
-module/remote/ThriftBackend.py                         (altered)  * ThriftBackend *
-module/remote/thriftbackend/pyload.thrift              (altered)  * ThriftBackend *
-module/remote/thriftbackend/CoreSocket.py              (new)      * ThriftBackend *
-module/remote/thriftbackend/ThriftClient.py            (altered)  * ThriftBackend *
-module/remote/thriftbackend/thriftgen/pyload/ttypes.py (altered)  * ThriftBackend *
+  Optional:
+    Download and install pyOpenSSL:
+      https://www.egenix.com/products/python/pyOpenSSL/#Download
+      Select 'Python 2.7 (MSI Installer)'

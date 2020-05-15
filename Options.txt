@@ -1,4 +1,5 @@
 
+*** The workarounds and tweaks (Setup) below were made for Qt4 and might not work for Qt5 !!!
 
    |==========================|==============================|=========|           |============|
   ||  Operating System        |  Desktop Environment         |  Setup  ||         || DE version ||
