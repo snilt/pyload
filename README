@@ -168,49 +168,54 @@ Linux/Unix-like OSs:
     (Run by: 'python2 pyLoadGui.py')
 
 
-Windows OS:
+Windows OS:   *Instructions updated*
 -----------
-  PyQt4:
-    32-bit (works on Windows 64-bit too):
-      Download and install Python:
-        https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi
-        Install with default features
-      Download and install PyQt4:
-        https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x32.exe
-        Select type of install: Minimal
+  For PyQt4:
     64-bit:
       Download and install Python:
         https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi
         Install with default features
+      Update Python Package Manager from Command Prompt:
+        C:\Python27\python -m pip install -U pip setuptools
+      Download and install PycURL:
+        https://dl.bintray.com/pycurl/pycurl/pycurl-7.43.0.2.win-amd64-py2.7.exe
       Download and install PyQt4:
         https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x64.exe
         Select type of install: Minimal
-    Setup Python Package Manager from Windows Command Prompt:
-      C:\Python27\python -m pip install -U pip setuptools
+    32-bit (works on Windows 64-bit too):
+      Download and install Python:
+        https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi
+        Install with default features
+      Update Python Package Manager from Command Prompt:
+        C:\Python27\python -m pip install -U pip setuptools
+      Download and install PycURL:
+        https://dl.bintray.com/pycurl/pycurl/pycurl-7.43.0.2.win32-py2.7.exe
+      Download and install PyQt4:
+        https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x32.exe
+        Select type of install: Minimal
 
-  PyQt5 (64-bit only) *untested*:
+  For PyQt5 (64-bit only):
     Download and install Python:
       https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi
       Install with default features
-    Setup Python Package Manager from Windows Command Prompt:
+    Update Python Package Manager from Command Prompt:
       C:\Python27\python -m pip install -U pip setuptools
-    Install PyQt5 from Windows Command Prompt:
-      C:\Python27\python -m pip install python-qt5
+    Download and install PycURL:
+      https://dl.bintray.com/pycurl/pycurl/pycurl-7.43.0.2.win-amd64-py2.7.exe
+    Download and install 'Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019':
+      https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads
+    Download and install 'Git for Windows'
+      https://github.com/git-for-windows/git/releases/download/v2.26.2.windows.1/Git-2.26.2-64-bit.exe
+      Install with default features
+    Install PyQt5 from Command Prompt:
+      Open a fresh new Command Prompt!
+      C:\Python27\python -m pip install git+git://github.com/pyqt/python-qt5.git
+    You might uninstall 'Git for Windows' now, since it was needed only for the PyQt5 installation procedure.
+      This will free up 250MB disk space.
 
-  Install required packages from Windows Command Prompt:
-    C:\Python27\python -m pip install pycurl pillow pycryptodome
-  Download and install Rhino (for ClickNLoad and other plugins):
-    https://github.com/mozilla/rhino/releases/download/Rhino1_7_7_1_RELEASE/rhino-1.7.7.1.zip
-    Double-click on the downloaded file, navigate into the "lib" folder,
-      right-click on the rhino-1.7.7.1 file and select Copy
-    Open your users folder, create a new folder, name it "pyload",
-      right-click on it, and select Paste
-    Open a Command Prompt:
-      cd pyload
-      ren rhino-1.7.7.1.jar js.jar
-  Rhino needs Java, download and install:
-    https://java.com/en/download/manual.jsp
+  Install required packages from Command Prompt:
+    C:\Python27\python -m pip install pillow pycryptodome Js2Py
   Optional:
-    Download and install pyOpenSSL:
+    Download and install pyOpenSSL 64-bit or 32-bit corresponding to the installed Python version:
       https://www.egenix.com/products/python/pyOpenSSL/#Download
       Select 'Python 2.7 (MSI Installer)'
