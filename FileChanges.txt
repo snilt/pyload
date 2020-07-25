@@ -61,10 +61,12 @@ ADDED      module/gui/Tools.py
 ADDED      module/gui/TrayIcon.py
 MODIFIED   module/gui/XMLParser.py
 ADDED      module/gui/_pyLoadGui.py
-MODIFIED   module/remote/ThriftBackend.py
-ADDED      module/remote/thriftbackend/CoreSocket.py
+ADDED      module/lib/restart_on_windows.py
+MODIFIED   module/remote/thriftbackend/Socket.py
 MODIFIED   module/remote/thriftbackend/ThriftClient.py
 MODIFIED   module/remote/thriftbackend/pyload.thrift
 MODIFIED   module/remote/thriftbackend/thriftgen/pyload/ttypes.py
+MODIFIED   pyLoadCli.py
+MODIFIED   pyLoadCore.py
 MODIFIED   pyLoadGui.py
 

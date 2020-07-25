@@ -1,7 +1,7 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4/Qt5 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.20 ; Internal version: 2020-05-15
+README for pyLoad Client v0.4.20 ; Internal version: 2020-07-25
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.
@@ -14,8 +14,8 @@ NOTE: If you update from previous pyLoad Client version 0.4.9
       Stop pyLoad Client, navigate to the 'Configuration directory' and delete the 'userplugins' subdirectory.
 
 
-Some (new) features:
-====================
+Some (new) features
+===================
 
 - Qt4 and Qt5 support
 - Drag'n'Drop
@@ -35,74 +35,32 @@ Some (new) features:
 - Internal server (standalone mode)
 
 
-Download:
-=========
+Download
+========
 
 From the GitHub website:
   https://github.com/snilt/pyload/releases/latest
-Or clone the git repository (linux bash):
+Or clone the git repository (Linux Bash):
   git clone https://github.com/snilt/pyload.git
   cd pyload
   git checkout -b stable origin/stable
   git checkout -b qt4gui origin/qt4gui
-Update an existing clone (linux bash):
+Update an existing clone (Linux Bash):
   cd pyload
   git checkout forkreadme && git pull
   git checkout stable && git pull
   git checkout qt4gui && git pull
 
 
-Dependencies in addition to the dependencies of pyLoad (https://pyload.net):
-============================================================================
+Dependencies in addition to the dependencies of pyLoad (https://github.com/pyload/pyload/tree/stable)
+=====================================================================================================
 
 Python 2.7
 PyQt4 or PyQt5
 
 
-Installation of dependencies:
-=============================
-
-Qt graphical library:
-  pyLoad Client supports PyQt4 and PyQt5. PyQt provides Python bindings for Qt. PyQt depends on Qt.
-  On some systems Qt4 and Qt5 can be installed side by side.
-  Before installing PyQt, you may want to check which, or if any, Qt version is already installed on your system.
-  Then install the PyQt version which belongs to an existing Qt installation
-  if you want to avoid the installation of another Qt version.
-  pyLoad Client detects the installed PyQt version on startup, if PyQt4 and PyQt5
-  are both installed then PyQt4 will be used.
-  You can force the PyQt version to use by command line options.
-  Using PyQt5 on an older Qt4 based Linux/Unix-like desktop might require a bit of extra effort,
-  see desktop notifications notes below.
-
-Desktop notifications:
-  pyLoad Client uses the Qt library which has built-in support for desktop notifications, it should work seamless.
-  However, on Linux/Unix-like OSs, additional packages might provide better desktop integration:
-    First option (recommended):
-      notify2  ---  Python interface to DBus notifications
-        This is a replacement for the older pynotify.
-        If your Linux distribution does not have a suitable python 2.7 package,
-        you may want to install it via the python package manager, see: https://pypi.org/project/notify2
-    Second option:
-      pynotify  ---  Python bindings for libnotify
-        This does not work for pyLoad Client on some (modern) systems.
-        This can be the reason for pyLoad Client to crash with a segmentation fault on every startup
-        This may just work fine for pyLoad Client (even on modern systems)
-        On some systems you possibly also must install
-        'Python bindings for the GTK+ widget set' (python-gtk/pygtk2) to get this working correctly.
-    Notes:
-      By default pyLoad Client automatically chooses the method to use for displaying desktop notifications
-      in the following order: notify2, pynotify, qt_tray
-      You can force the desktop notification method by command line options.
-      If you want to use pynotify together with PyQt5,
-      but pyLoad Client crashes with a segmentation fault on every startup:
-        Install 'Qt 5 extra widget styles' (on Debian via: apt-get install qt5-style-plugins)
-        and start pyLoad Client like this: QT_QPA_PLATFORMTHEME=gtk2 ./pyLoadGui.py
-        If that does not help:
-          Additionally install and setup the 'Qt5 Configuration Utility' (qt5ct)
-          and start pyLoad Client like this: QT_QPA_PLATFORMTHEME=qt5ct ./pyLoadGui.py
-
-OpenSSL: pyOpenSSL can be used for connections between pyLoad Client and a remote pyLoad server.
-
+Installation of dependencies
+============================
 
 Linux/Unix-like OSs:
 --------------------
@@ -116,7 +74,7 @@ Linux/Unix-like OSs:
         pynotify: apt-get install python-notify
       pyOpenSSL: apt-get install python-openssl
 
-*The distros below are untested*
+  Note: The instructions for the distributions below may be outdated.
 
   openSUSE:
     zypper install python python-pycrypto python-pycurl python-Pillow python-Beaker rhino
@@ -125,7 +83,7 @@ Linux/Unix-like OSs:
     Optional:
       Desktop notifications:
         notify2: zypper install python-notify2
-        pynotify: zypper install python-notify   #python-gtk
+        pynotify: zypper install python-notify   # python-gtk
       pyOpenSSL: zypper install python-pyOpenSSL
   Fedora:
     dnf install python python2-crypto python-pycurl python2-pillow python-beaker rhino
@@ -134,7 +92,7 @@ Linux/Unix-like OSs:
     Optional:
       Desktop notifications:
         notify2: dnf install python-notify2
-        pynotify: dnf install notify-python   #pygtk2
+        pynotify: dnf install notify-python   # pygtk2
       pyOpenSSL: dnf install pyOpenSSL
   Arch:
     pacman -S --needed python2 python2-crypto python2-pycurl python2-pillow python2-beaker python2-funcsigs rhino
@@ -145,77 +103,126 @@ Linux/Unix-like OSs:
         notify2: pacman -S --needed python-notify2
         pynotify: pacman -S --needed python2-notify
       pyOpenSSL: pacman -S --needed python2-pyopenssl
-    (Run by: 'python2 pyLoadGui.py')
   CentOS:
     yum install python python2-crypto python-pycurl python-pillow python-beaker rhino
     PyQt4: yum install PyQt4
-    PyQt5: No package? https://github.com/pyqt/python-qt5/wiki/Compiling-for-CentOS-7
+    PyQt5: I couldn't find a suitable package.
     Optional:
       Desktop notifications:
-        notify2: I could not find a suitable package. To install it via the python package manager do:
+        notify2: I couldn't find a suitable package. To install it via pip do:
             yum install python2-pip && pip2 install notify2
-        pynotify: yum install notify-python   #pygtk2
+        pynotify: yum install notify-python   # pygtk2
       pyOpenSSL: yum install pyOpenSSL
   FreeBSD:
     pkg install python27 py27-pycrypto py27-pycurl py27-pillow py27-beaker py27-sqlite3 rhino
     PyQt4: pkg install py27-qt4
-    PyQt5: pkg install py27-qt5   # no package? install from ports?
+    PyQt5: pkg install py27-qt5   # Untested, no package? Install from ports?
     Optional:
       Desktop notifications:
         notify2: pkg install py27-notify2
         pynotify: pkg install py27-notify
       pyOpenSSL: pkg install py27-openssl
-    (Run by: 'python2 pyLoadGui.py')
 
-
-Windows OS:   *Instructions updated*
------------
-  For PyQt4:
-    64-bit:
-      Download and install Python:
-        https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi
-        Install with default features
-      Update Python Package Manager from Command Prompt:
-        C:\Python27\python -m pip install -U pip setuptools
-      Download and install PycURL:
-        https://dl.bintray.com/pycurl/pycurl/pycurl-7.43.0.2.win-amd64-py2.7.exe
-      Download and install PyQt4:
-        https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x64.exe
-        Select type of install: Minimal
-    32-bit (works on Windows 64-bit too):
-      Download and install Python:
-        https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi
-        Install with default features
-      Update Python Package Manager from Command Prompt:
-        C:\Python27\python -m pip install -U pip setuptools
-      Download and install PycURL:
-        https://dl.bintray.com/pycurl/pycurl/pycurl-7.43.0.2.win32-py2.7.exe
-      Download and install PyQt4:
-        https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x32.exe
-        Select type of install: Minimal
-
-  For PyQt5 (64-bit only):
+Windows 7/10:
+-------------
+  For PyQt4 64-bit:
     Download and install Python:
-      https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi
-      Install with default features
-    Update Python Package Manager from Command Prompt:
-      C:\Python27\python -m pip install -U pip setuptools
-    Download and install PycURL:
-      https://dl.bintray.com/pycurl/pycurl/pycurl-7.43.0.2.win-amd64-py2.7.exe
+      https://www.python.org/ftp/python/2.7.18/python-2.7.18.amd64.msi
+      Install with default features, unless you know better.
+    Update Python Package Installer from Command Prompt:
+      C:\Python27\python -m pip install -U pip setuptools wheel
+    Download and install PyQt4:
+      https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x64.exe
+      Selecting install type 'Minimal' is sufficient for pyLoad Client.
+  For PyQt4 32-bit:
+    Download and install Python:
+      https://www.python.org/ftp/python/2.7.18/python-2.7.18.msi
+      Install with default features, unless you know better.
+    Update Python Package Installer from Command Prompt:
+      C:\Python27\python -m pip install -U pip setuptools wheel
+    Download and install PyQt4:
+      https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x32.exe
+      Selecting install type 'Minimal' is sufficient for pyLoad Client.
+  For PyQt5 64-bit (only):
+    Download and install Python:
+      https://www.python.org/ftp/python/2.7.18/python-2.7.18.amd64.msi
+      Install with default features, unless you know better.
+    Update Python Package Installer from Command Prompt:
+      C:\Python27\python -m pip install -U pip setuptools wheel
+    Install PyQt5 from Command Prompt:
+      C:\Python27\python -m pip install https://github.com/pyqt/python-qt5/archive/master.zip
     Download and install 'Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019':
       https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads
-    Download and install 'Git for Windows'
-      https://github.com/git-for-windows/git/releases/download/v2.26.2.windows.1/Git-2.26.2-64-bit.exe
-      Install with default features
-    Install PyQt5 from Command Prompt:
-      Open a fresh new Command Prompt!
-      C:\Python27\python -m pip install git+git://github.com/pyqt/python-qt5.git
-    You might uninstall 'Git for Windows' now, since it was needed only for the PyQt5 installation procedure.
-      This will free up 250MB disk space.
-
-  Install required packages from Command Prompt:
-    C:\Python27\python -m pip install pillow pycryptodome Js2Py
+  Install dependencies from Command Prompt:
+    C:\Python27\python -m pip install pycurl==7.43.0.2 pillow pycryptodome Js2Py
   Optional:
-    Download and install pyOpenSSL 64-bit or 32-bit corresponding to the installed Python version:
-      https://www.egenix.com/products/python/pyOpenSSL/#Download
-      Select 'Python 2.7 (MSI Installer)'
+    Install pyOpenSSL:
+      C:\Python27\python -m pip install pyOpenSSL
+
+
+General Information
+===================
+
+Qt graphical library:
+  pyLoad Client supports PyQt4 and PyQt5. PyQt provides Python bindings for Qt. PyQt depends on Qt.
+  On some systems Qt4 and Qt5 can be installed side by side.
+  Before installing PyQt, you may want to check which, or if any, Qt version is already installed on your system.
+  Then install the PyQt version which belongs to an existing Qt installation
+  if you want to avoid the installation of another Qt version.
+  pyLoad Client detects the installed PyQt version on startup, when PyQt4 and PyQt5
+  are both installed then PyQt4 will be used.
+  You can force the PyQt version to use by command line options.
+  Using PyQt5 on an older Qt4 based Linux/Unix-like desktop might require a bit of extra effort,
+  see desktop notifications notes below.
+
+Desktop notifications:
+  pyLoad Client uses the Qt library which has built-in support for desktop notifications, it should work seamless.
+  However, on Linux/Unix-like OSs, additional packages might provide better desktop integration:
+    First option (recommended):
+      notify2  ---  Python interface to DBus notifications
+        This is a replacement for the older pynotify.
+        If your Linux distribution doesn't have a suitable python 2.7 package,
+        you may want to install it via pip, see: https://pypi.org/project/notify2
+    Second option:
+      pynotify  ---  Python bindings for libnotify
+        This doesn't work for pyLoad Client on some (modern) systems,
+        and can be the reason for pyLoad Client to crash with a segmentation fault on every startup,
+        or may just work fine for pyLoad Client (even on modern systems).
+        On some systems you possibly also must install:
+          'Python bindings for the GTK+ widget set' (python-gtk/pygtk2) to get this working correctly.
+    Notes:
+      By default pyLoad Client automatically chooses the method to use for displaying desktop notifications
+      in the following order: notify2, pynotify, qt_tray
+      You can force the desktop notification method by command line options.
+      If you want to use pynotify together with PyQt5,
+      but pyLoad Client crashes with a segmentation fault on every startup:
+        Install 'Qt 5 extra widget styles' (on Debian via: apt-get install qt5-style-plugins)
+        and start pyLoad Client like this: QT_QPA_PLATFORMTHEME=gtk2 ./pyLoadGui.py
+        If that doesn't help:
+          Additionally install and setup the 'Qt5 Configuration Utility' (qt5ct)
+          and start pyLoad Client like this: QT_QPA_PLATFORMTHEME=qt5ct ./pyLoadGui.py
+
+OpenSSL:
+  pyOpenSSL can be used to encrypt network traffic between pyLoad Client and an external (or remote) pyLoad server.
+
+How to start the application:
+  To start pyLoad Client from a terminal on Linux/Unix-like OSs:
+    Try: python2.7 pyLoadGui.py
+    Or:  python2 pyLoadGui.py
+    Or:  python pyLoadGui.py
+    Or:  ./pyLoadGui.py
+  To start pyLoad Client from a Command Prompt on Windows:
+    Try: C:\Python27\python pyLoadGui.py
+    Or:  python pyLoadGui.py
+    Or:  pyLoadGui.py
+  To start pyLoad (the server):
+    Do the same as for pyLoad Client but replace pyLoadGui.py with pyLoadCore.py
+    Note: You must first configure the server before you can use it.
+          To start the pyLoad Configuration Assistent, run pyLoadCore.py with the option: -s
+          For the beginning, you can just accept the default values and set a password.
+
+pyLoad Client connections to a remote pyLoad server:
+  If you want to connect to a server that runs the official pyLoad code (https://github.com/pyload/pyload/tree/stable),
+  you must replace two files on the server side with the ones from this repository, otherwise errors will occur.
+    module/remote/thriftbackend/pyload.thrift
+    module/remote/thriftbackend/thriftgen/pyload/ttypes.py
