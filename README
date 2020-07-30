@@ -160,8 +160,28 @@ Windows 7/10:
       C:\Python27\python -m pip install pyOpenSSL
 
 
+Bundled executable package for Windows 7/10
+===========================================
+
+  This doesn't require Python, Qt and the other dependencies to be installed.
+  Download pyLoadQt4ClientWin32Exe from: https://github.com/snilt/pyload/releases/latest
+  To start pyLoad Client from a Command Prompt:
+    pyLoadGui.exe
+  To start pyLoad (the server):
+    pyLoadCore.exe
+    Note: You must first configure the server before you can use it.
+          To start the pyLoad Configuration Assistent, run pyLoadCore.exe with the option: -s
+          For the beginning, you can just accept the default values and set a password.
+
+
 General Information
 ===================
+
+pyLoad Client connections to remote pyLoad servers:
+  If you want to connect to a server that runs the official pyLoad code (https://github.com/pyload/pyload/tree/stable),
+  you must replace two files on the server side with the ones from this repository, otherwise errors will occur.
+    module/remote/thriftbackend/pyload.thrift
+    module/remote/thriftbackend/thriftgen/pyload/ttypes.py
 
 Qt graphical library:
   pyLoad Client supports PyQt4 and PyQt5. PyQt provides Python bindings for Qt. PyQt depends on Qt.
@@ -203,7 +223,8 @@ Desktop notifications:
           and start pyLoad Client like this: QT_QPA_PLATFORMTHEME=qt5ct ./pyLoadGui.py
 
 OpenSSL:
-  pyOpenSSL can be used to encrypt network traffic between pyLoad Client and an external (or remote) pyLoad server.
+  pyOpenSSL can be used to encrypt network traffic between the webinterface and a pyLoad server.
+  And can also be used to encrypt network traffic between the pyLoad Client and a pyLoad server.
 
 How to start the application:
   To start pyLoad Client from a terminal on Linux/Unix-like OSs:
@@ -220,9 +241,3 @@ How to start the application:
     Note: You must first configure the server before you can use it.
           To start the pyLoad Configuration Assistent, run pyLoadCore.py with the option: -s
           For the beginning, you can just accept the default values and set a password.
-
-pyLoad Client connections to a remote pyLoad server:
-  If you want to connect to a server that runs the official pyLoad code (https://github.com/pyload/pyload/tree/stable),
-  you must replace two files on the server side with the ones from this repository, otherwise errors will occur.
-    module/remote/thriftbackend/pyload.thrift
-    module/remote/thriftbackend/thriftgen/pyload/ttypes.py
