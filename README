@@ -163,10 +163,14 @@ Windows 7/10:
 Bundled executable package for Windows 7/10
 ===========================================
 
-  This doesn't require Python, Qt and the other dependencies to be installed.
-  Download pyLoadQt4ClientWin32Exe from: https://github.com/snilt/pyload/releases/latest
+  These packages don't require Python, Qt and the other dependencies to be installed.
+  Download pyLoadQt4ClientWin32Exe or pyLoadQt5ClientWin64Exe from:
+    https://github.com/snilt/pyload/releases/latest
   To start pyLoad Client from a Command Prompt:
     pyLoadGui.exe
+    Note: If you get the error message 'Failed to load PyQt',
+          download and install 'Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019':
+            https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads
   To start pyLoad (the server):
     pyLoadCore.exe
     Note: You must first configure the server before you can use it.
