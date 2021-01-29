@@ -1,7 +1,7 @@
 This is a fork of https://github.com/pyload/pyload
 with a reworked Qt4/Qt5 GUI on top of the pyLoad stable branch.
 
-README for pyLoad Client v0.4.20 ; Internal version: 2020-07-25
+README for pyLoad Client v0.4.20 ; Internal version: 2021-01-28
 https://github.com/snilt/pyload/tree/forkreadme
 
 The actual source code is in the qt4gui branch.

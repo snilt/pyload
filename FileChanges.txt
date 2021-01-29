@@ -20,6 +20,7 @@ MODIFIED   icons/toolbar_stop.png
 ADDED      icons/toolbar_stop_nopause.png
 MODIFIED   locale/cs/LC_MESSAGES/pyLoadGui.mo
 MODIFIED   locale/de/LC_MESSAGES/pyLoadGui.mo
+ADDED      locale/el_GR/LC_MESSAGES/pyLoadGui.mo
 MODIFIED   locale/es/LC_MESSAGES/pyLoadGui.mo
 MODIFIED   locale/fi/LC_MESSAGES/pyLoadGui.mo
 MODIFIED   locale/fr/LC_MESSAGES/pyLoadGui.mo
